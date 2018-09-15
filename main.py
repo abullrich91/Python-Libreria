@@ -5,7 +5,6 @@ from random import randint
 
 
 def Libros():
-    print("Hola mundo")
     authors = ["Alejandro", "Bernardo", "Carlos", "Daniel", "Ezequiel", "Francisco", "Gerardo", "Hernan", "Ismael", "Joaquin"]
     registeredISBNs = []
     editorials = ["Pixar", "Editorial Pepito", "Lenin & Marx"]
@@ -19,12 +18,16 @@ def Libros():
     print ("title, author, pageQuantity, isbnNumber, editorionYear, editorial, genre")
     for book in Library.books:
         print(book.title, book.author, book.pageQuantity, book.isbnNumber, book.editionYear, book.editorial, book.genre)
-    listAuthors()
-    listAllBooks()
-    listBooksByEditorial("Pixar")
-    listAuthorsByEditorial("Pixar")
-    listBooksByEditionWithinRange("Pixar", 1900, 1950)
-    listBooksTitleSubstring("Pocahontas")
+    try:
+        listAuthors()
+        listAllBooks()
+        listBooksByEditorial("Pixar")
+        listAuthorsByEditorial("Pixar")
+        listBooksByEditionWithinRange("Pixar", 1900, 1950)
+        listBooksTitleSubstring("Pocahontas")
+        findBookByTitle("Pocahontas")
+    except Exception as e:
+        print(e.__str__())
 
 
 Libros()
